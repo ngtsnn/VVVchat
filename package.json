@@ -1,0 +1,16 @@
+{
+  "name": "vvvchat",
+  "version": "1.0.0",
+  "description": "This app for practicing",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:frontend": "cd frontend && npm start && cd ..",
+    "start:backend": "cd backend && npm run start && cd ..",
+    "start": "npm start:backend & npm start:frontend",
+    "dev:backend": "cd backend && npm run dev && cd ..",
+    "dev": "npm dev:backend & npm start:frontend"
+  },
+  "author": "",
+  "license": "ISC"
+}
