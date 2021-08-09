@@ -33,10 +33,14 @@ a:hover {
 }
 
 /*custom scrollbar*/
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 5px;
 }
 
 ::-webkit-scrollbar:horizontal {
   height: 5px;
+} */
+
+body{
+  background-color: #f7f7f7;
 }

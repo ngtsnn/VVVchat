@@ -1,0 +1,121 @@
+.header{
+
+  transition: all ease-in-out .4s;
+  &.sticky{
+    background: white;
+    position: sticky;
+    top: -60px;
+    &.both{
+      top: 0;
+    }
+  }
+
+  &-main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+
+    .logo-col{
+      display: block;
+      height: fit-content;
+      width: 150px;
+
+      >img{
+        height: 40px;
+        width: auto;
+      }
+
+      >.brand-name>h1{
+        font-size: 20px;
+        margin-left: .5rem;
+        font-weight: bolder;
+        color: #8224E3;
+        display: inline-block;
+      }
+    }
+
+    .search-col{
+      width: auto;
+      max-width: calc(100% - 70px);
+      
+      .search-bar{
+        width: 380px;
+        max-width: 100%;
+        position: relative;
+        height: 40px;
+        border: #8224E3 1px solid;
+        background: none;
+        border-radius: 24px;
+        overflow: hidden;
+        
+        input[type="search"]{
+          background: none;
+          width: calc(100% - 40px);
+          height: 100%;
+          margin-left: 40px;
+          color: #8224E3;
+
+          &::placeholder{
+            color: rgba($color: #8224E3, $alpha: .5);
+          }
+        }
+
+        button[type="submit"]{
+          position: absolute;
+          display: block;
+          width: 20px;
+          height: 20px;
+          top: 7px;
+          left: 10px;
+          background: none;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+
+    .account-col{
+      width: 240px; 
+      .icon-btn{
+
+        >i{
+          color: #8224E3 !important;
+        }
+
+        &:hover >i{
+          color: #fff !important;
+        }
+      }
+
+      .user-img{
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        margin: 0;
+        background: none;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+        overflow: hidden;
+
+        img{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-bottom{
+    i{
+      font-size: 24px;
+    }
+  }
+
+  hr{
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    height: 2px;
+  }
+}
