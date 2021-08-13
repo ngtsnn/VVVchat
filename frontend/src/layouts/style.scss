@@ -1,0 +1,50 @@
+.left-side,
+.right-side {
+  max-width: 360px;
+  width: 25%;
+  height: calc(100vh - 50px);
+  position: sticky;
+  top: 0;
+  transition: all ease-in-out 0.4s;
+}
+
+.header.both {
+  ~ .app-body {
+    .left-side,
+    .right-side {
+      position: sticky;
+      top: 50px;
+    }
+  }
+}
+
+main {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 720px;
+  width: 50%;
+}
+
+@media screen and (max-width: 992px) {
+  main {
+    width: 70%;
+  }
+
+  .left-side {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .small-left-side {
+    width: 70px;
+
+    & ~ main {
+      width: calc(100% - 70px);
+    }
+  }
+
+  main {
+    width: 100%;
+  }
+}

@@ -1,11 +1,23 @@
 import React from 'react';
 
-import Header from '../../components/header';
+
+import Feed from '../../components/feed';
+
 
 function Home() {
   return (
     <>
-      <Header></Header>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
+      <Feed></Feed>
     </>
   )
 }

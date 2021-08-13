@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useRef, } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 
 import "./style.scss";
@@ -7,6 +7,7 @@ import "./style.scss";
 function Header() {
 
   const headerRef = useRef(null);
+  const url = useLocation().pathname;
 
   useEffect(() => {
 
@@ -33,7 +34,6 @@ function Header() {
 
     window.addEventListener("scroll", MakeSticky);
 
-
     return () => {
       window.removeEventListener("scroll", MakeSticky)
     }
@@ -44,8 +44,11 @@ function Header() {
       <header className="header container-fluid shadow border-b-1" id="header" ref={headerRef}>
         <div className="header-main" id="header-main">
           <div className="logo-col">
-            <img src="/Logo/logo.png" alt="" />
-            <Link to="/" className="brand-name"><h1 className="d-sm-inline d-none">VVV Social</h1></Link>
+            
+            <Link to="/" className="brand-name">
+              <img src="/Logo/logo.png" alt="" />
+              <h1 className="d-sm-inline d-none">VVV Social</h1>
+            </Link>
           </div>
           <div className="search-col">
             <form action="" onSubmit={(e) => { e.preventDefault(); }}>
@@ -59,7 +62,7 @@ function Header() {
             <div className="d-flex justify-content-between">
               <Dropdown>
                 <Dropdown.Toggle variant="outline-primary" bsPrefix="icon-btn rounded-circle position-relative">
-                  <i className="bi bi-person"></i>
+                  <i className="bi bi-people"></i>
                   <span className="badge badge-danger position-absolute rounded-lg">5+</span>
                 </Dropdown.Toggle>
 
@@ -113,64 +116,35 @@ function Header() {
         </div>
         <hr className="d-md-none"/>
         <div className="header-bottom d-md-none">
-          <div className="d-flex justify-content-around">
-            <Link to="/">
-              <i className="bi bi-house-door"></i>
-            </Link>
-            <Link to="/friends">
-              <i className="bi bi-person"></i>
-            </Link>
-            <Link to="/chats">
-              <i className="bi bi-chat"></i>
-            </Link>
-            <Link to="/notifications">
-              <i className="bi bi-bell"></i>
-            </Link>
-            <Link to="/info">
-              <i className="bi bi-gear"></i>
-            </Link>
-          </div>
+          <ul className="mobile-nav">
+            <li className={(url === '/') ? "mobile-nav-item active" : "mobile-nav-item"}>
+              <Link to="/">
+                <i className="bi bi-house-door"></i>
+              </Link>
+            </li>
+            <li className={(url === '/friends') ? "mobile-nav-item active" : "mobile-nav-item"}>
+              <Link to="/friends">
+                <i className="bi bi-person"></i>
+              </Link>
+            </li>
+            <li className={(url === '/chats') ? "mobile-nav-item active" : "mobile-nav-item"}>
+              <Link to="/chats">
+                <i className="bi bi-chat"></i>
+              </Link>
+            </li>
+            <li className={(url === '/notifications') ? "mobile-nav-item active" : "mobile-nav-item"}>
+              <Link to="/notifications">
+                <i className="bi bi-bell"></i>
+              </Link>
+            </li>
+            <li className={(url === '/info') ? "mobile-nav-item active" : "mobile-nav-item"}>
+              <Link to="/profile">
+                <i className="bi bi-gear"></i>
+              </Link>
+            </li>
+          </ul>
         </div>
       </header>
-
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti ducimus cupiditate quis tempora nulla suscipit beatae esse, aliquam voluptatum quam expedita eius magnam nobis a odit similique quaerat nostrum quibusdam.</p>
     </>
   )
 };

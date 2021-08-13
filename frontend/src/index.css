@@ -17,6 +17,7 @@
   text-decoration: none;
   font-family: "Roboto", sans-serif, Arial;
   color: #1c1c1c;
+  scroll-behavior: smooth;
 }
 
 ul, ol {

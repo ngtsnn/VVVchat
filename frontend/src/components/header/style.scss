@@ -1,10 +1,11 @@
 .header{
-
+  position: relative;
+  z-index: 9999;
   transition: all ease-in-out .4s;
   &.sticky{
     background: white;
     position: sticky;
-    top: -60px;
+    top: -57px;
     &.both{
       top: 0;
     }
@@ -21,7 +22,7 @@
       height: fit-content;
       width: 150px;
 
-      >img{
+      >a>img{
         height: 40px;
         width: auto;
       }
@@ -40,7 +41,7 @@
       max-width: calc(100% - 70px);
       
       .search-bar{
-        width: 380px;
+        width: 350px;
         max-width: 100%;
         position: relative;
         height: 40px;
@@ -76,7 +77,7 @@
     }
 
     .account-col{
-      width: 240px; 
+      width: 220px; 
       .icon-btn{
 
         >i{
@@ -108,8 +109,25 @@
   }
 
   &-bottom{
-    i{
-      font-size: 24px;
+    padding-bottom: .3rem;
+    .mobile-nav{
+      display: flex;
+      justify-content: space-between; 
+      margin-bottom: 0;
+
+      .mobile-nav-item{
+        padding: .15rem .5rem;
+        border-radius: 4px;
+
+        &.active{
+          background: rgba($color: #6c757d, $alpha: .25);
+        }
+
+        i{
+          font-size: 24px;
+        }
+      }
+      
     }
   }
 

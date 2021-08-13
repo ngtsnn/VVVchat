@@ -1,0 +1,45 @@
+.feed-container {
+
+  .feed-header {
+    display: flex;
+    align-items: center;
+
+    .user-avatar {
+      width: 3rem;
+      height: 3rem;
+      overflow: hidden;
+      border-radius: 50%;
+
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .user-info {
+      .user-name {
+        font-weight: bold;
+      }
+
+      .post-info{
+        font-size: .75rem;
+        display: flex;
+
+      }
+    }
+  }
+
+  .feed-body{
+
+  }
+
+  .feed-footer{
+
+    .figure{
+      font-size: .75rem;
+    }
+    .action-btns{
+
+    }
+  }
+}

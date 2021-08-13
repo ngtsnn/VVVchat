@@ -1,6 +1,10 @@
 import React, {lazy, Suspense} from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import Loading from "../components/loading"
+import Loading from "../components/loading";
+
+import AppRoute from "../layouts";
+
+import MainLayout from "../layouts/main";
 
 const Login = lazy(() => import("../pages/auth/login"));
 const Home = lazy(() => import("../pages/home"));
@@ -14,9 +18,7 @@ function Routes() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <Route path="*">
-              <Home></Home>
-            </Route>
+            <AppRoute Layout={MainLayout} Page={Home}></AppRoute>
           </Switch>
         </Router>
       </Suspense>
