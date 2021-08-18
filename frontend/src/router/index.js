@@ -8,6 +8,7 @@ import MainLayout from "../layouts/main";
 
 const Login = lazy(() => import("../pages/auth/login"));
 const Home = lazy(() => import("../pages/home"));
+const Chatbox = lazy(() => import("../pages/chatbox"));
 
 function Routes() {
   return (
@@ -18,7 +19,7 @@ function Routes() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <AppRoute Layout={MainLayout} Page={Home}></AppRoute>
+            <AppRoute Layout={MainLayout} Page={Chatbox}></AppRoute>
           </Switch>
         </Router>
       </Suspense>

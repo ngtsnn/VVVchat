@@ -1,0 +1,46 @@
+.chatbox-container {
+    border: 1px solid#DADDE1;
+    border-top: none;
+    height: 100%;
+    display: flex;
+    .user {
+        margin: 5px;
+        display: flex;
+        .userAva {
+            margin-right: 10px;
+            justify-content: center ;
+            .img {
+                width: 50px;
+                border-radius: 50%;
+            }
+        }
+
+        .userInfo {
+            .useName {
+                
+            }
+            .timeOnl {
+                font-size: 15px;
+            }
+        }
+    }
+    .optionalBtn {
+        .icon-btn {
+            justify-content: center;
+            width: 40px;
+            font-size: 24px;
+            margin: 10px 5px 10px;
+            background-color: #8224E3;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            float: right;
+            .icon > * {
+                color: white;
+            }
+        }
+    }
+
+    .half-w {
+        width: 50%;
+    }
+}

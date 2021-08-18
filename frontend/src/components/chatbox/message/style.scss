@@ -1,0 +1,36 @@
+.message-container {
+    display: flex;
+    margin: 10px 5px;
+    .avatar {
+        .img {
+            width: 30px;
+            border-radius: 50%;
+        }
+        .none {
+            display: none;
+        }
+        margin-right: 10px;
+    }
+
+    .messagecontentme {
+        background-color: #8224E3;
+        color: white;   
+        padding: 5px;
+        // border-radius: 20px 5px 20px;
+        word-wrap: break-word;
+        max-width: 400px;
+        margin-bottom: 10px;
+        margin-right: 5px;
+        margin-left: auto;
+    }
+
+    .messagecontentyou {
+        background-color: #8D949E;
+        color: white;
+        padding: 5px 10px;
+        // border-radius: 5px 20px 10px;
+        word-wrap: break-word;
+        // width: 400px;
+        margin-bottom: 10px;
+    }
+}
