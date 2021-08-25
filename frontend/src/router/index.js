@@ -19,7 +19,8 @@ function Routes() {
             <Route exact path="/login">
               <Login></Login>
             </Route>
-            <AppRoute Layout={MainLayout} Page={Chatbox}></AppRoute>
+            <AppRoute Layout={MainLayout} Page={Chatbox} exact path="/messages"></AppRoute>
+            <AppRoute Layout={MainLayout} Page={Home}></AppRoute>
           </Switch>
         </Router>
       </Suspense>
