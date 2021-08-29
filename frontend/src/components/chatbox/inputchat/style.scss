@@ -23,6 +23,8 @@
         height: 40px;   
         .input {
             margin: 5px;
+            width: 90%;
+            overflow: auto;
         }
     }
     .btnsend {

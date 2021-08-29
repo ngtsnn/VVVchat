@@ -3,14 +3,15 @@ import HeaderBox from './chatboxheader';
 import ChatContent from './chatcontent';
 import InputChat from './inputchat';
 
-function Chatbox() {
-  
+function Chatbox(props) {
+  const {handlechatbox} = props
+  console.log(handlechatbox)
   return (
-    <>
-      <HeaderBox></HeaderBox>
+    <div className="w-100">
+      <HeaderBox handletoggle = {handlechatbox}></HeaderBox>
       <ChatContent></ChatContent>
       <InputChat></InputChat>
-    </>
+    </div>
   )
 }
 

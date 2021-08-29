@@ -15,8 +15,8 @@
     .messagecontentme {
         background-color: #8224E3;
         color: white;   
-        padding: 5px;
-        // border-radius: 20px 5px 20px;
+        padding: 5px 10px;
+        border-radius: 10px;
         word-wrap: break-word;
         max-width: 400px;
         margin-bottom: 10px;
@@ -28,9 +28,9 @@
         background-color: #8D949E;
         color: white;
         padding: 5px 10px;
-        // border-radius: 5px 20px 10px;
+        border-radius: 10px;
         word-wrap: break-word;
-        // width: 400px;
+        max-width: 400px;
         margin-bottom: 10px;
     }
 }
